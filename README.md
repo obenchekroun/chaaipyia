@@ -35,14 +35,19 @@ more information. You can always do this later if you don't want to use PiJuice 
 * SSH into the raspberry pi unit, or plug monitor and keyboard in.
 * (Optional) Run `sudo apt-get update` and `sudo apt-get upgrade` to update system
 * Run the following code to install chaapyia in your home directory:
+
+#### Manual install
 ```
 cd
 git clone https://github.com/obenchekroun/chaaipyia.git
 cd chaaipyia
-chmod +x setup.sh
-sudo ./setup.sh
-bash <(curl https://raw.githubusercontent.com/jezs00/pycasso/main/setup.sh)
 ```
+
+#### Automatic install
+``` shell
+bash <(curl https://raw.githubusercontent.com/obenchekroun/chaaipyia/main/setup.sh)
+```
+
 * Take note of the proposed installation directory
 * Select `Option 1` - Install/Upgrade chaaipyia
 * Select "Yes" to enable service on boot if that is what you want to do _(it is probably what you want to do)_
