@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 User=root
-WorkingDirectory=${HOME}/chaapiya/
-ExecStart=dbus-run-session -- bash ${HOME}/chaapiya/scripts/run.sh
+WorkingDirectory=${HOME}/chaaipyia/
+ExecStart=dbus-run-session -- bash ${HOME}/chaaipyia/scripts/run.sh
 Type=idle
 RemainAfterExit=false
 

@@ -205,11 +205,13 @@ You don't even need a backup battery for this, because after shutting down your 
 Uncomment the following lines from `scripts/run.sh`
 
 ``` sh
-echo "Going to sleep in 60 seconds, for 24 hours..."
-sleep 60
+[..]
+echo "Going to sleep in 60 seconds, for 1 hour..."
 echo 0 > /sys/class/rtc/rtc0/wakealarm #reset
-echo "$(date -d 'now + 24 hours' +%s)" > /sys/class/rtc/rtc0/wakealarm
-halt
+echo "$(date -d 'now + 1 hours' +%s)" > /sys/class/rtc/rtc0/wakealarm
+shutdown -h +1 "Chaaipyia going to sleep in 60 seconds, use sudo shutdown -c to cancel"
+
+EOF
 ```
 
 You can adjust the frequency of waking up in the `echo "$(date -d 'now + 24 hours' +%s)" > /sys/class/rtc/rtc0/wakealarm` code.
