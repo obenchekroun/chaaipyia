@@ -1,0 +1,13 @@
+[Unit]
+Description=A system to send AI generated art to an E-Paper display through a Raspberry PI unit
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=${HOME}/pycasso/
+ExecStart=dbus-run-session -- bash ${HOME}/pycasso/scripts/run.sh
+Type=idle
+RemainAfterExit=false
+
+[Install]
+WantedBy=multi-user.target
