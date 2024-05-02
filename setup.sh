@@ -27,6 +27,8 @@ YELLOW="\e[0;93m"
 GREEN='\033[0;32m'
 RESET="\e[0m"
 
+echo "On démarre l'install\n"
+
 function install_linux_packages(){
   sudo apt-get update
   sudo apt-get install -y git python3-pip libatlas-base-dev pass gnupg2 jq libopenjp2-7
