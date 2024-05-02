@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 User=root
-WorkingDirectory=${HOME}/pycasso/
-ExecStart=dbus-run-session -- bash ${HOME}/pycasso/scripts/run.sh
+WorkingDirectory=${HOME}/chaapiya/
+ExecStart=dbus-run-session -- bash ${HOME}/chaapiya/scripts/run.sh
 Type=idle
 RemainAfterExit=false
 

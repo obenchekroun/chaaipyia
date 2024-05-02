@@ -1,10 +1,10 @@
-# chaapyia
+# chaaipyia
 System to send AI generated art to an E-Paper display through a Raspberry PI unit
 
 Based on Pycasso : [Jess Farber's Pycasso](https://github.com/jezs00/pycasso)
 An article has been published on pycasso's development [here](https://jezs00.medium.com/pycasso-how-to-build-a-picture-frame-to-show-you-random-ai-art-every-day-44a1d3d78237).
 
-| ![Chaapyia at home](/img/chaapiyia.jpg?raw=true) | 
+| ![Chaaipyia at work](/img/chaapiyia.jpg?raw=true) | 
 |:--:| 
 | *Working hard !* |
 
@@ -37,14 +37,14 @@ more information. You can always do this later if you don't want to use PiJuice 
 * Run the following code to install chaapyia in your home directory:
 ```
 cd
-git clone https://github.com/obenchekroun/chaapiya.git
-cd chaapiya
+git clone https://github.com/obenchekroun/chaaipyia.git
+cd chaaipyia
 chmod +x setup.sh
 sudo ./setup.sh
 bash <(curl https://raw.githubusercontent.com/jezs00/pycasso/main/setup.sh)
 ```
 * Take note of the proposed installation directory
-* Select `Option 1` - Install/Upgrade pycasso
+* Select `Option 1` - Install/Upgrade chaaipyia
 * Select "Yes" to enable service on boot if that is what you want to do _(it is probably what you want to do)_
 * (Optional) If you want to use pijuice, select "Yes" to install PiJuice
 * (Optional) Select `Option 5 - Apply GRPCIO Fix` _(There are issues with GLIBC on raspberry pi, and it was installed by the Stable Diffusion package. This fixes it up and does not appear to break Stable Diffusion. You'll probably have to do this.)_
