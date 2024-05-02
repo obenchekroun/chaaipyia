@@ -53,7 +53,8 @@ bash <(curl https://raw.githubusercontent.com/obenchekroun/chaaipyia/main/setup.
 ### Configure chaapyia
 * Make sure you are in your chaaipyia install directory.
 * Run `nano .config` for all configuration options. There's a lot to play with here, and apart from file paths you should be able to play around and see what happens.
-* The most important item of configuration is `[EPD]` - `type` . You should set this to the supported EPD you have plugged in, anything from [omni-epd's readme](https://github.com/robweber/omni-epd) should work, copy and paste the appropriate EPD string and paste it here instead of omni_epd.mock. Leaving type as omni_epd.mock will generate a png file in this folder instead of updating the display.
+* The most important item of configuration is `[EPD]` - `type` . You should set this to the supported EPD you have plugged in, anything from [omni-epd's readme](https://github.com/robweber/omni-epd) should work, copy and paste the appropriate EPD string and paste it here instead of omni_epd.mock. Leaving type as omni_epd.mock will generate a png file in this folder instead of updating the display. 
+ * The Waveshare 5.65 inch 7 colors is `waveshare_epd.epd5in65f`.
 * Provider weights (determining the source of images for chaaipyia) have also to be configured : `nano .config`, and set the _Provider Weight_ section. for example `dalle_amount = 1`, to systematically go for a Dall-E image.
 * Make sure that `use_keychain = False` is set to False, as keychain do not wok properly on RPi Zero2W.
 * run `python3 examples/review_screen.py` and see if it works on your screen. _(If your screen is not displaying an image there's most likely a problem with your EPD, you can also check pycasso.log to troubleshoot)_
@@ -65,12 +66,12 @@ more information. My preferred configuration is to set a wakeup timer to start a
 * You can configure the buttons on the PiJuice to perform different functions. I recommend leaving the first switch as power on device, as this is very useful for cycling the image or for turning the device on while powered to administer.
 
 
-| ![PiJuice CLI Menu](https://i.imgur.com/npZJSTK.png) | 
+| ![PiJuice CLI Menu](/img/PiJuice_CLI_Menu.png) | 
 |:--:| 
 | *PiJuice CLI Menu* |
 
 
-| ![PiJuice CLI Wakeup](https://i.imgur.com/w6i53wM.png) | 
+| ![PiJuice CLI Wakeup](/img/PiJuice_CLI_Wakeup.png) | 
 |:--:| 
 | PiJuice CLI Wakeup Configuration |
 
@@ -147,7 +148,7 @@ and comment out :
 
 ```
 
-8. Now, if we have to sync time of the RTC to the one of the RPi (obtained with internet connection :
+8. Now, if we have to sync time of the RTC to the one of the RPi (obtained with internet connection) :
 
 ``` sh
 sudo hwclock -r #get time from RTC clock
