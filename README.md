@@ -201,6 +201,19 @@ The magic is that GP03 will always start the system when pulled to GND. And the 
 
 You don't even need a backup battery for this, because after shutting down your Pi it will still provide power on the 3V3 and 5V rails. So this is not a solution for battery based systems. If you really need to bring current consumption down to zero, you need a different solution, for example you can connect the INT of the rtc to a MCU which uses a mosfet to turn power on.
 
+#### Configure chaapiyia to boot with DS3231 RTC
+Uncomment the following lines from `scripts/run.sh`
+
+``` sh
+echo "Going to sleep in 60 seconds, for 24 hours..."
+sleep 60
+echo 0 > /sys/class/rtc/rtc0/wakealarm #reset
+echo "$(date -d 'now + 24 hours' +%s)" > /sys/class/rtc/rtc0/wakealarm
+halt
+```
+
+You can adjust the frequency of waking up in the `echo "$(date -d 'now + 24 hours' +%s)" > /sys/class/rtc/rtc0/wakealarm` code.
+
 ### Run chaaipyia
 * Run `sudo systemctl restart chaaipyia` and see if it worked!
 
