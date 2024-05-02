@@ -73,7 +73,7 @@ def set_poster():
     print("Added details OK")
 
 
-print("pycasso Credential Management")
+print("chaaipyia Credential Management")
 
 choice = None
 
@@ -90,6 +90,6 @@ while choice != QUIT:
     elif choice == MODE_POSTER:
         set_poster()
     elif choice == QUIT:
-        print("Closing pycasso Credential Management")
+        print("Closing chaaipyia Credential Management")
     else:
         print(f"Invalid option '{choice}'")

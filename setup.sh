@@ -237,19 +237,19 @@ function install_chaaipyia(){
     cp "${LOCAL_DIR}/examples/.creds-example" "${LOCAL_DIR}/.creds"
   fi
 
-  if [ -f "${LOCAL_DIR}/prompts" ]; then
+  if [ ! -d "${LOCAL_DIR}/prompts" ]; then
     mkdir "${LOCAL_DIR}/prompts"
   fi
 
-  if [ -f "${LOCAL_DIR}/images" ]; then
+  if [ ! -d "${LOCAL_DIR}/images" ]; then
     mkdir "${LOCAL_DIR}/images"
   fi
 
-  if [ -f "${LOCAL_DIR}/images/generated" ]; then
+  if [ ! -d "${LOCAL_DIR}/images/generated" ]; then
     mkdir "${LOCAL_DIR}/images/generated"
   fi
 
-  if [ -f "${LOCAL_DIR}/images/external" ]; then
+  if [ ! -d "${LOCAL_DIR}/images/external" ]; then
     mkdir "${LOCAL_DIR}/images/external"
   fi
 
@@ -288,14 +288,12 @@ while [ $INSTALL_OPTION -ne 0 ]
 do
  INSTALL_OPTION=$(whiptail --menu "\
 
-
-
-░█████╗░██╗░░██╗░█████╗░░█████╗░██╗██████╗░██╗░░░██╗██╗░█████╗░
-██╔══██╗██║░░██║██╔══██╗██╔══██╗██║██╔══██╗╚██╗░██╔╝██║██╔══██╗
-██║░░╚═╝███████║███████║███████║██║██████╔╝░╚████╔╝░██║███████║
-██║░░██╗██╔══██║██╔══██║██╔══██║██║██╔═══╝░░░╚██╔╝░░██║██╔══██║
-╚█████╔╝██║░░██║██║░░██║██║░░██║██║██║░░░░░░░░██║░░░██║██║░░██║
-░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝╚═╝░░░░░░░░╚═╝░░░╚═╝╚═╝░░╚═╝
+ ░█████╗░██╗░░██╗░█████╗░░█████╗░██╗██████╗░██╗░░░██╗██╗░█████╗░
+ ██╔══██╗██║░░██║██╔══██╗██╔══██╗██║██╔══██╗╚██╗░██╔╝██║██╔══██╗
+ ██║░░╚═╝███████║███████║███████║██║██████╔╝░╚████╔╝░██║███████║
+ ██║░░██╗██╔══██║██╔══██║██╔══██║██║██╔═══╝░░░╚██╔╝░░██║██╔══██║
+ ╚█████╔╝██║░░██║██║░░██║██║░░██║██║██║░░░░░░░░██║░░░██║██║░░██║
+ ░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝╚═╝░░░░░░░░╚═╝░░░╚═╝╚═╝░░╚═╝
 
   Repo set to '${GIT_REPO}/${GIT_BRANCH}'
   Setting up in local directory '${LOCAL_DIR}'
