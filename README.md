@@ -7,7 +7,9 @@ System to send AI generated art to an E-Paper display through a Raspberry PI uni
 
 ## Acknowledgments
 
-Based on Pycasso : [Jess Farber's Pycasso](https://github.com/jezs00/pycasso). This project has been largely based on pycasso with a few tweaks for my needs. An article has been published on pycasso's development [here](https://jezs00.medium.com/pycasso-how-to-build-a-picture-frame-to-show-you-random-ai-art-every-day-44a1d3d78237).
+Based on Pycasso : [Jess Farber's Pycasso](https://github.com/jezs00/pycasso). This project has been largely based on pycasso with a few tweaks for my needs. All credit goes to them for making this awesome project.
+
+An article has been published on pycasso's development by Jess Farber  [here](https://jezs00.medium.com/pycasso-how-to-build-a-picture-frame-to-show-you-random-ai-art-every-day-44a1d3d78237).
 
 Inspiration for pycasso based on Tom Whitwell's [SlowMovie](https://github.com/TomWhitwell/SlowMovie) and the very helpful write-up available at https://debugger.medium.com/how-to-build-a-very-slow-movie-player-in-2020-c5745052e4e4 on setting up epaper to work with a Raspberry Pi unit. I also liberally reused a lot of the install.sh script from this project because of the similarities and because it's pretty good. I would also like to acknowledge [robweber](https://github.com/robweber) who not only created [omni-epd](https://github.com/robweber/omni-epd) which I implemented so that this can work dynamically with many displays, but also provided me with a lot of good code examples that I referred back to often to try to ensure I was following best practises.
 
