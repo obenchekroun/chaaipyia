@@ -87,7 +87,7 @@ This project adds a DS3231 clock to set alarm in order to wake up the RPi Zero 2
 
 | DS3231  | RPi connection | RPi pin | 
 | --- | --- | --- |
-| VCC  | 3V3 | Pin 3 |
+| VCC  | 3V3 | Pin 1 |
 | GND  | GND | Pin 6 e.g  |
 | SDA  | GPIO 4 | Pin 7  |
 | SCL  | GPIO 27 | Pin 13  |
