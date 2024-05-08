@@ -204,19 +204,38 @@ The magic is that GP03 will always start the system when pulled to GND. And the 
 You don't even need a backup battery for this, because after shutting down your Pi it will still provide power on the 3V3 and 5V rails. So this is not a solution for battery based systems. If you really need to bring current consumption down to zero, you need a different solution, for example you can connect the INT of the rtc to a MCU which uses a mosfet to turn power on.
 
 #### Configure chaapiyia to boot with DS3231 RTC
-Uncomment the following lines from `scripts/run.sh`
+There are two options, either wake at regular interval, even at night, or do not wake during night.
 
-``` sh
-[..]
-echo "Going to sleep in 60 seconds, for 1 hour..."
-echo 0 > /sys/class/rtc/rtc0/wakealarm #reset
-echo "$(date -d 'now + 1 hours' +%s)" > /sys/class/rtc/rtc0/wakealarm
-shutdown -h +1 "Chaaipyia going to sleep in 60 seconds, use sudo shutdown -c to cancel"
+Uncomment the choosen option lines from `run.sh` :
 
-EOF
+- Update at regular interval, regardless of time of the day :
+``` bash
+#### Option 1 : update even during the night
+# echo "Going to sleep in 60 seconds, for 3 hours..."
+# echo 0 > /sys/class/rtc/rtc0/wakealarm #reset
+# echo "$(date -d 'now + 3 hours' +%s)" > /sys/class/rtc/rtc0/wakealarm
+# shutdown -h +1 "ePaper-frame going to sleep in 60 seconds. Send sudo shutdown -c to cancel"
 ```
 
-You can adjust the frequency of waking up in the `echo "$(date -d 'now + 24 hours' +%s)" > /sys/class/rtc/rtc0/wakealarm` code.
+- Update at regular interval, except between 23h and 6h :
+
+``` bash
+#### Option 2 : do nothing during the night (from 23h to 6h)
+# if [ "$hour" -ge 6 ] && [ "$hour" -lt 23 ]; then
+#     echo "Going to sleep in 60 seconds, for 3 hours..."
+#     echo 0 > /sys/class/rtc/rtc0/wakealarm #reset
+#     echo "$(date -d 'now + 3 hours' +%s)" > /sys/class/rtc/rtc0/wakealarm
+#     shutdown -h +1 "ePaper-frame going to sleep in 60 seconds. Send sudo shutdown -c to cancel"
+# else
+#     echo "Going to sleep in 60 seconds, until 6:00..."
+#     echo 0 > /sys/class/rtc/rtc0/wakealarm #reset
+#     echo `date +%s -d '06:00:00'` > /sys/class/rtc/rtc0/wakealarm
+#     shutdown -h +1 "ePaper-frame going to sleep in 60 seconds. Send sudo shutdown -c to cancel"
+# fi
+```
+
+You can adjust the frequency of waking up in the `echo "$(date -d 'now + 3 hours' +%s)" > /sys/class/rtc/rtc0/wakealarm` code, or the hours of sleep in `if [ "$hour" -ge 6 ] && [ "$hour" -lt 23 ]`
+
 
 ### Run chaaipyia
 * Run `sudo systemctl restart chaaipyia` and see if it worked!
