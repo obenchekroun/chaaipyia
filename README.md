@@ -448,3 +448,27 @@ I have found this might cause issues with PiJuice. This is possibly due to runni
 
 ### Log an issue
 If you're experiencing a bug or issue, relevant information is logged in `pycasso.log` and your current `.config`.
+
+## Physical frame
+Picture Frame is the 13x18cm frame from Ikea, where the screen is centered with a black thick paper insert, and the back is pierced to let through the cables. The RPi Zero 2W is put on a case and fixed with patafix to the back of the frame. Passe-partout are also aded for effect, the marie-louise provided with the picture frame is kept, and the plastic transparent screen is used. A matte plastic screen can be put to replace the glossy one provided with the screen.
+See the below pctures for details of the build.
+
+| ![Global frame](/img/construct1.jpg?raw=true) | 
+|:--:| 
+| *The frame. Passe-partout and marie louise can be seen* |
+
+| ![Back frame](/img/construct2.jpg?raw=true) | 
+|:--:| 
+| *The back of the frame. See position of cable with the RPi Zero 2W in the case. See also holes for the pico connector (this screen is the pico variant)* |
+
+| ![Back frame 2](/img/construct3.jpg?raw=true) | 
+|:--:| 
+| *The back of the frame. See hole for spi connector on the screen* |
+
+| ![Frame without back](/img/construct4.jpg?raw=true) | 
+|:--:| 
+| *Without the back. See screen put inside a black thick paper insert* |
+
+| ![Frame without screen](/img/construct5.jpg?raw=true) | 
+|:--:| 
+| *Screen removed. See black thick paper insert and first (out of two) passe-partout* |
