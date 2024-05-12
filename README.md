@@ -105,6 +105,7 @@ This project adds a DS3231 clock to set alarm in order to wake up the RPi Zero 2
  dtoverlay=i2c-rtc-gpio,ds3231,i2c_gpio_sda=4,i2c_gpio_scl=27,wakeup-source
  ```
 Make sure that the GPIO pin in the dtoverlay code corresponds to the pinning of the DS3231 to the RPi.
+ * Then reboot `sudo reboot`
 
 5. To detect and list i2c hardware :
 ``` sh
