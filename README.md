@@ -230,7 +230,7 @@ Uncomment the choosen option lines from `run.sh` :
 # else
 #     echo "Going to sleep in 60 seconds, until 6:00..."
 #     echo 0 > /sys/class/rtc/rtc0/wakealarm #reset
-#     echo `date +%s -d '06:00:00'` > /sys/class/rtc/rtc0/wakealarm
+#     echo `date +%s -d 'tomorrow 06:00:00'` > /sys/class/rtc/rtc0/wakealarm
 #     shutdown -h +1 "ePaper-frame going to sleep in 60 seconds. Send sudo shutdown -c to cancel"
 # fi
 ```
