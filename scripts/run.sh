@@ -2,7 +2,6 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 hour=$(date +%H)
 echo -n 'db' | gnome-keyring-daemon --unlock
-source "${SCRIPT_DIR}/../.venv/bin/activate"
 python3 "${SCRIPT_DIR}/run.py"
 
 #### Option 1 : update even during the night
