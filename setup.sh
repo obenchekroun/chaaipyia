@@ -39,13 +39,13 @@ function install_pijuice_package(){
 }
 
 function install_python_packages(){
-  python3 -m venv "${LOCAL_DIR}/.venv" # to create
-  echo -e "Venv created"
-  source "${LOCAL_DIR}/.venv/bin/activate"
-  echo -e "venv sourced"
-  sudo pip3 install "git+https://github.com/obenchekroun/chaaipyia@$(curl -s https://api.github.com/repos/obenchekroun/chaaipyia/releases/latest | jq -r ".tag_name")"
-  sudo pip3 install stability-sdk @ git+https://github.com/Stability-AI/stability-sdk.git
-  sudo pip3 install openai @ git+https://github.com/openai/openai-python.git
+  #python3 -m venv "${LOCAL_DIR}/.venv" # to create
+  #echo -e "Venv created"
+  #source "${LOCAL_DIR}/.venv/bin/activate"
+  #echo -e "venv sourced"
+  sudo pip3 install "git+https://github.com/obenchekroun/chaaipyia@$(curl -s https://api.github.com/repos/obenchekroun/chaaipyia/releases/latest | jq -r ".tag_name")" --break-system-packages
+  sudo pip3 install stability-sdk @ git+https://github.com/Stability-AI/stability-sdk.git --break-system-packages
+  sudo pip3 install openai @ git+https://github.com/openai/openai-python.git --break-system-packages
 }
 
 function install_python_minimal(){
