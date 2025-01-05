@@ -49,19 +49,19 @@ function install_python_minimal(){
 }
 
 function uninstall_python_packages(){
-  sudo pip3 uninstall piblo -y
+  sudo pip3 uninstall piblo -y --break-system-packages
   echo -e "chaaipyia (piblo) package uninstalled"
 }
 
 function fix_grpcio(){
   echo -e "${YELLOW}This might take a while... Be patient...${RESET}"
-  sudo pip3 uninstall grpcio grpcio-tools -y
+  sudo pip3 uninstall grpcio grpcio-tools -y --break-system-packages
   sudo pip3 install grpcio==1.44.0 --no-binary=grpcio grpcio-tools==1.44.0 --no-binary=grpcio-tools --break-system-packages
   echo -e "GRPCIO fix applied"
 }
 
 function update_grpcio(){
-  sudo pip3 uninstall grpcio grpcio-tools -y
+  sudo pip3 uninstall grpcio grpcio-tools -y --break-system-packages
   sudo pip3 install grpcio grpcio-tools --upgrade --break-system-packages
   echo -e "GRPCIO update applied"
 }
